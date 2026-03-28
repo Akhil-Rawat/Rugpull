@@ -1,0 +1,778 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   ShieldFi - AxiomFlow Inspired Design
+   DeFi Insurance Protocol
+   ========================================== */
+
+:root {
+  /* AxiomFlow Colors */
+  --primary: #2d5016;
+  --primary-dark: #1a3a0a;
+  --secondary: #2d5016;
+  --accent-green: #16a34a;
+  --accent-pink: #ec4899;
+  --accent-orange: #f97316;
+  --cream: #fef8f3;
+  --off-white: #ffffff;
+  --dark-text: #1a1a1a;
+  --medium-text: #4a4a4a;
+  --light-text: #7a7a7a;
+  --border-color: #333333;
+  
+  /* Additional palette for components */
+  --red: #ef4444;
+  --green: #22c55e;
+  --blue: #3b82f6;
+  --bg3: #f5f5f5;
+  --muted: #666666;
+
+  /* Typography */
+  --font-main: "Courier Prime", "Courier New", Courier, monospace;
+  --font-display: "Courier Prime", "Courier New", Courier, monospace;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Courier Prime", monospace;
+  background: #2d5016;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+  background: #f5f5f0;
+  border-bottom: 4px solid #2d5016;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+nav .max-w-7xl {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo */
+.flex.items-center.gap-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: fit-content;
+}
+
+.font-bold.text-base {
+  font-family: "Courier Prime", monospace;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #2d5016;
+  text-transform: uppercase;
+}
+
+.text-xs {
+  font-size: 0.7rem;
+  color: #4a7c2e;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Tab Buttons in Nav */
+nav button {
+  font-family: "Courier Prime", monospace;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 3px solid;
+  font-size: 0.875rem;
+  padding: 10px 18px;
+}
+
+nav button:not(:last-child) {
+  background: transparent;
+  color: #2d5016;
+  border-color: #2d5016;
+}
+
+nav button:not(:last-child):hover {
+  background: #e8e8e0;
+  border-color: #2d5016;
+}
+
+/* Active/Selected Tab - FULL GREEN */
+nav button:not(:last-child):active,
+nav button[class*="active"] {
+  background: #2d5016;
+  color: white;
+  border-color: #2d5016;
+}
+
+/* Wallet Button - RIGHT - Always Green */
+nav button:last-child {
+  background: #2d5016;
+  color: white;
+  border-color: #2d5016;
+  margin-left: auto;
+}
+
+nav button:last-child:hover {
+  background: #1a3a0a;
+  border-color: #1a3a0a;
+}
+
+/* Buttons */
+button {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 3px solid white;
+}
+
+.bg-gradient-to-r {
+  background: #2d5016 !important;
+  color: white !important;
+  padding: 12px 24px;
+  box-shadow: none;
+}
+
+.bg-gradient-to-r:hover {
+  transform: none;
+  box-shadow: none;
+  background: #1a3a0a !important;
+}
+
+.bg-gradient-to-r:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.bg-transparent {
+  background: transparent !important;
+  color: white !important;
+  border: 3px solid white !important;
+  padding: 10px 20px;
+  box-shadow: none;
+}
+
+.bg-transparent:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none;
+}
+
+/* Hero Section */
+section[class*="flex"][class*="flex-col"][class*="items-center"],
+.hero {
+  background: #2d5016;
+  border-bottom: 5px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-family: "Courier Prime", monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: none;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-family: "Courier Prime", monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+}
+
+section[class*="flex"][class*="flex-col"][class*="items-center"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  pointer-events: none;
+}
+
+.text-8xl {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+}
+
+.text-gray-600 {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* Stats Grid */
+.grid.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.text-3xl {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.text-gray-400 {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.bg-white {
+  background: #2d5016;
+  border: 3px solid white;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+.bg-white:hover {
+  transform: none;
+}
+
+.rounded-2xl {
+  border-radius: 0;
+}
+
+.p-8 {
+  padding: 30px;
+}
+
+/* Input Fields */
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 3px solid white;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: "Courier Prime", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+/* Section Titles */
+h1,
+h2,
+h3 {
+  font-family: "Courier Prime", monospace;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* Main Content */
+main {
+  padding: 60px 20px;
+  margin-top: 0;
+  background: white;
+}
+
+/* Tabs */
+.border-b {
+  border-bottom: 3px solid #2d5016;
+  padding-bottom: 15px;
+}
+
+.border-b button {
+  padding: 12px 20px;
+  margin-right: 15px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.border-b button:hover {
+  color: #2d5016;
+}
+
+.border-b button.active {
+  color: #2d5016;
+  border-bottom-color: #2d5016;
+  transform: none !important;
+}
+
+/* Status Messages */
+.bg-green-50 {
+  background: rgba(22, 163, 74, 0.1);
+  border: 3px solid #16a34a;
+  padding: 15px;
+  border-radius: 0;
+  margin: 15px 0;
+}
+
+.text-green-700 {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.bg-red-50 {
+  background: rgba(239, 68, 68, 0.1);
+  border: 3px solid #dc2626;
+  padding: 15px;
+  border-radius: 0;
+  margin: 15px 0;
+}
+
+.text-red-700 {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.bg-blue-50 {
+  background: rgba(45, 80, 22, 0.1);
+  border: 3px solid #2d5016;
+  padding: 15px;
+  border-radius: 0;
+  margin: 15px 0;
+}
+
+.text-blue-700 {
+  color: #2d5016;
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-spin {
+  animation: pulse 1s infinite;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.slide-in {
+  animation: slideInRight 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-8xl {
+    font-size: 2.5rem;
+  }
+
+  .grid.grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .bg-white {
+    box-shadow: 4px 4px 0 var(--dark-text);
+  }
+
+  nav .max-w-7xl {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button.bg-gradient-to-r {
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 5px solid white;
+  margin-top: 60px;
+}
+
+footer p {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #16a34a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #22c55e;
+}
+
+/* Loading Spinner */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(22, 163, 74, 0.3);
+  border-top-color: #16a34a;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stat Value */
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--purple);
+  margin: 8px 0;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Demo Section */
+.demo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+  background: #2d5016;
+  border: 3px solid #1a1a1a;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.demo-container h3 {
+  font-family: "Courier Prime", monospace;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+  border-bottom: 3px solid white;
+  padding-bottom: 12px;
+}
+
+.card {
+  background: #2d5016;
+  border: 3px solid white;
+  padding: 24px;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 20px;
+}
+
+.card h4 {
+  font-family: "Courier Prime", monospace;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.liquidity-bar-outer {
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid white;
+  height: 40px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.liquidity-bar-inner {
+  background: #16a34a;
+  height: 100%;
+  transition: width 0.3s ease;
+  border-right: none;
+}
+
+.btn-red {
+  background: #dc2626 !important;
+  color: white !important;
+  border: 3px solid white !important;
+  padding: 14px 24px !important;
+  font-family: "Courier Prime", monospace !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100%;
+}
+
+.btn-red:hover:not(:disabled) {
+  transform: none;
+  box-shadow: none !important;
+  background: #b91c1c !important;
+}
+
+.btn-red:active:not(:disabled) {
+  transform: none;
+  box-shadow: none !important;
+}
+
+.btn-red:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-green {
+  background: #16a34a !important;
+  color: white !important;
+  border: 3px solid white !important;
+  padding: 14px 24px !important;
+  font-family: "Courier Prime", monospace !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100%;
+}
+
+.btn-green:hover:not(:disabled) {
+  transform: none;
+  box-shadow: none !important;
+  background: #15803d !important;
+}
+
+.btn-green:active:not(:disabled) {
+  transform: none;
+  box-shadow: none !important;
+}
+
+.btn-green:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rug-detected-text {
+  font-family: "Courier Prime", monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: #dc2626;
+  border: 3px solid white;
+  padding: 16px 24px;
+  text-align: center;
+  box-shadow: none;
+  margin: 16px 0;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px;
+  border-radius: 0;
+  margin-bottom: 12px;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.event-timestamp {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+  font-family: "Courier Prime", monospace;
+  letter-spacing: 0.05em;
+}
+
+.payout-amount {
+  font-family: "Courier Prime", monospace;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #16a34a;
+  animation: countUp 0.6s ease;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .demo-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
