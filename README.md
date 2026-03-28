@@ -1,4 +1,6 @@
 # 🛡️ ShieldFi - DeFi Rug Pull Insurance Protocol
+Economics: Premium rate = 10% (configurable). Example: insure 2 MON → premium 0.2 MON. If drop=20%, payout = 2 × 80% = 1.6 MON. Proportional payouts balance risk vs. sustainability.
+
 
 **A decentralized rug pull detection and insurance platform on Monad Testnet.**
 
