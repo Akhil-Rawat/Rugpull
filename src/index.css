@@ -21,7 +21,7 @@
   --medium-text: #4a4a4a;
   --light-text: #7a7a7a;
   --border-color: #333333;
-  
+
   /* Additional palette for components */
   --red: #ef4444;
   --green: #22c55e;
@@ -202,7 +202,7 @@ section[class*="flex"][class*="flex-col"][class*="items-center"],
   border-bottom: 5px solid #1a1a1a;
   position: relative;
   overflow: hidden;
-  margin-top: 70px;
+  margin-top: -15px;
   padding: 80px 20px;
   text-align: center;
 }
